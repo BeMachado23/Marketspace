@@ -12,7 +12,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Image source={(require('./assets/logo.png'))} style={{ width: 100, height: 100, resizeMode: 'contain', marginTop: 60 }} />
+      <View style={styles.container2}>
+      <Image source={(require('./assets/logo.png'))} style={{ width: 100, height: 100, resizeMode: 'contain', marginTop: 10 }} />
       <Text style={styles.titulo}>marketspace</Text>
       <Text style={styles.subtitulo}>Seu espaço de compra e venda</Text>
       <Text style={styles.comando}>Acesse sua conta</Text>
@@ -31,7 +32,16 @@ export default function App() {
         </View>
         <TouchableOpacity style={styles.join}>Entrar</TouchableOpacity>
       </View>
+      </View>
+      <View style={styles.background2}>
+          <Text style={{fontSize:14, color:'#a8a6aa', fontWeight:600}}>
+            Ainda não tem acesso?
+          </Text>
+          <TouchableOpacity style={styles.bgText}>Criar uma conta</TouchableOpacity>
+
+          </View>
       <StatusBar style="auto" />
+      
     </View>
   );
 }
@@ -39,8 +49,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EDECEE',
     alignItems: 'center',
+
+  },
+  container2:{
+    backgroundColor: '#D9D8DA',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    borderRadius: 20,
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+ 
   },
   titulo: {
     fontSize: 34,
@@ -73,7 +93,7 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: '#f7f7f8',
     borderRadius: 8,
-    paddingRight: 40, // Espaço para o ícone de olho
+    paddingRight: 40, 
   },
   eyeIconContainer: {
     position: 'absolute',
@@ -87,6 +107,34 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     color: 'white',
     marginTop: 17,
+    marginBottom: 60
+    
   },
+  background2:{
+    marginTop:50,
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    justifyContent:'center',
+    width:'100%',
+    
+    
+  },
+  bgText:{
+    width:250,
+    height:40,
+    marginTop:15,
+    display:'flex',
+    textAlign:'center',
+    backgroundColor:'#d9d8da',
+    alignItems:'center',
+    justifyContent:'center',
+    color:'#534a57',
+    borderRadius:5,
+    fontFamily:'Arial',
+    fontWeight:'bold',
+    fontSize:13,
+
+  }
 });
 
